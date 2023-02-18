@@ -1,93 +1,89 @@
+/* Container */
 .container {
   display: grid;
   place-items: center;
-  }
-  
-  .leaderboard {
+}
+
+/* Leaderboard */
+.leaderboard {
   border: .1rem solid #fff;
   border-radius: .5rem;
   box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.2);
-  margin-top: 5rem;
+  margin-top: 4rem;
   max-width: 60rem;
   overflow: hidden;
-  }
-  
-  .listItem {
+}
+
+/* Item Lists */
+.listItem {
   display: grid;
   grid-template-columns: auto 1fr auto 1fr auto;
   align-items: center;
-  justify-content: end;
   padding: .5rem;
   transition: all 0.2s ease;
-  }
-  
-  .listItem:first-child {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  }
-  
-  .listItem:last-child {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  }
-  
-  .listItem:nth-child(even) {
+}
+
+.listItem:nth-child(even) {
   background-color: #F6F8FC;
-  }
-  
-  .listItem:nth-child(odd) {
+}
+
+.listItem:nth-child(odd) {
   background-color: #fff;
-  }
-  
-  .user {
+}
+
+/* User */
+.user {
   display: flex;
   align-items: center;
-  }
-  
-  .profileImage {
+}
+
+.profileImage {
   width: 50px;
+  min-width: 50px;
   height: 50px;
-  border-radius: 2rem;
+  border-radius: 50%;
   margin-right: 1rem;
   user-select: none;
-  }
-  
-  .profileImage:hover {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.profileImage:hover {
   transform: scale(1.1);
-  }
-  
-  .username {
+}
+
+.username {
   font-size: 1.25rem;
   font-weight: bold;
   color: #000;
   cursor: pointer;
-  transition: color 0.2s ease;
-  }
-  
-  .username:hover,
-  .username:active,
-  .username:focus {
+}
+
+.username:hover,
+.username:active,
+.username:focus {
   text-decoration: underline;
   color: #4F46E5;
-  }
-  
-  .rank {
+}
+
+.rank {
   font-size: 1.5rem;
   font-weight: bold;
   color: #000;
   margin-right: 1rem;
   user-select: none;
-  }
-  
-  .score {
+}
+
+.score {
   font-size: 1.25rem;
   font-weight: bold;
   color: #4B5563;
   margin-right: 1rem;
   user-select: none;
-  }
-  
-  .button {
+}
+
+/* Buttons */
+.button {
   margin-left: 21rem;
   border: none;
   border-radius: .75rem;
@@ -95,60 +91,55 @@
   font-size: 1.25rem;
   font-weight: bold;
   padding: .4rem;
-  }
-  
-  .likeButton, .likedButton {
+}
+
+.likeButton, .likedButton {
   width: 6rem;
   color: #fff;
   transition: background-color 0.05s ease, color 0.05s ease;
-  }
-  
-  .likeButton {
+}
+ 
+.likeButton {
   background-color: #4F46E5;
-  }
+}
   
-  .likedButton {
+.likedButton {
   background-color: #fff;
   color: #4F46E5;
-  }
-  
-  .likeButton:hover {
+}
+
+.likeButton:hover {
   background-color: #636CF6;
   transform: scale(1.1);
-  }
-  
-  .likedButton:hover {
+}
+
+.likedButton:hover {
   background-color: #F6F8FC;
   transform: scale(1.1);
-  }
-  
-  .headerName, .headerScore, .headerNumber {
+}
+
+
+/* Headers */
+.headerName, .headerScore, .headerNumber {
   font-size: 1.25rem;
   font-weight: lighter;
   color: #96A0B5;
-  }
-  
-  .headerNumber {
-  width: 25%;
-  justify-self: start;
-  margin-right: 4.5rem;
-  }
-  
-  .headerName {
-  width: 70%;
-  justify-self: start;
-  }
-  
-  .headerScore {
+}
+
+.headerNumber {
+  margin-right: 5rem;
+}
+
+.headerScore {
   width: 30%;
   justify-self: center;
-  margin-left: -7.9rem;
-  }
-  
+  margin-left: -8.5rem;
+}
+
+/* Responsive */
 @media only screen and (max-width: 600px) {
   .leaderboard {
     margin-top: 2rem;
-    max-width: 90%;
   }
   
   .listItem {
@@ -159,20 +150,7 @@
   }
   
   .rank, .username, .score, .headerNumber, .headerName, .headerScore {
-    font-size: 1rem;
     justify-self: start;
-  }
-  
-  .rank, .headerNumber {
-    width: 1%;
-  }
-
-  .username, .headerName {
-    width: 70%;
-  }
-  
-  .score, .headerScore {
-    width: 29%;
   }
 
   .likeButton, .likedButton {

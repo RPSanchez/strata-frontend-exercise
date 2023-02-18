@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  }
+  
+  .card {
+  max-width: 40rem;
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: auto;
+  transition: all 0.3s ease-in-out;
+  }
+  
+  .username {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0 2rem;
+  color: #000;
+  user-select: none;
+  }
+  
+  .profileImage {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #4f46e5;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  }
+  
+  .profileImage:hover {
+  border: 3px solid #636cf6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.1);
+  }
+  
+  .actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: auto;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  }
+  
+  .button, .likedButton {
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 5rem 3rem 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  padding: 0.4rem;
+  width: 8rem;
+  }
+  
+  .button {
+  background-color: #4f46e5;
+  color: white;
+  }
+  
+  .likedButton {
+  background-color: #fff;
+  color: #4f46e5;
+  }
+  
+  .button:hover {
+  background-color: #636cf6;
+  color: #fff;
+  transform: scale(1.1);
+  }
+  
+  .likedButton:hover {
+  background-color: #f6f8fc;
+  color: #4f46e5;
+  transform: scale(1.1);
+  }
+  
+  .age, .birthday, .email, .twitter {
+  color: #4f46e5;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  align-self: flex-start;
+  user-select: none;
+  }
+  
+  .age:hover, .twitter:hover, .email:hover, .birthday:hover {
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .twitter:hover, .email:hover {
+  color: blue;
+  }
+  
+  .bio {
+  color: #4B5563;
+  font: 1rem;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  .card {
+  max-width: 90%;
+  }
+  
+  .username {
+  font-size: 1.5rem;
+  }
+
+  .profileImage {
+    width: 8rem;
+    height: 8rem;
+    user-select: none;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+
+  .button,
+  .likedButton {
+    width: 7rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}

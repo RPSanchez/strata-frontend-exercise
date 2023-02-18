@@ -17,17 +17,15 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex items-center">
               <Link href="/">
-                <a>
-                  <Image
-                    className="block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
-                  />
-                </a>
+                <img
+                  className="block h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  alt="Your Company"
+                />
               </Link>
               <div className="ml-4 sm:ml-6 sm:flex sm:space-x-8 items-center">
                 <Link href="/leaderboard">
-                  <a
+                  <button
                     className="border-indigo-500 text-gray-900 text-sm font-medium hover:border-gray-300 hover:text-gray-700"
                     style={{ transition: 'color 0.3s ease' }}
                     onMouseOver={(e) => {
@@ -49,7 +47,7 @@ export default function Navbar() {
                     }}
                   >
                     Leaderboard
-                  </a>
+                  </button>
                 </Link>
               </div>
             </div>

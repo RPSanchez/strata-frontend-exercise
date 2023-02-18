@@ -151,12 +151,12 @@ const Leaderboard: FC = () => {
             >
               <span className={styles.rank}>{index + 1}</span>
               <div className={styles.user}>
-                <Link legacyBehavior href={`/profile/${username}`}>
+                <Link legacyBehavior href={`/profile/${encodeURIComponent(username)}`}>
                   <a className={styles.profileWrapper}>
                     <img src={profileImage} alt={`Profile picture of ${username}`} className={styles.profileImage} />
                   </a>
                 </Link>
-                <Link legacyBehavior href={`/profile/${username}`}>
+                <Link legacyBehavior href={`/profile/${encodeURIComponent(username)}`}>
                   <a className={styles.username}>{username}</a>
                 </Link>
               </div>

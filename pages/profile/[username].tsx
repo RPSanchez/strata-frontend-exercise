@@ -56,18 +56,6 @@ const UserProfile: FC = () => {
     }
   }, [profileData]);
 
-  const handleBack = () => {
-    router.back();
-  };
-
-  useEffect(() => {
-    const likedUsersStr = localStorage.getItem("likedUsers");
-    if (likedUsersStr) {
-      const likedUsers = JSON.parse(likedUsersStr);
-      setLiked(likedUsers[profileData.username] || false);
-    }
-  }, [profileData]);
-
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -94,6 +82,10 @@ const UserProfile: FC = () => {
 
   const handleTwitterClick = () => {
     window.open(`https://twitter.com/${profileData.twitter}`, "_blank");
+  };
+
+  const handleBack = () => {
+    router.back();
   };
 
   return (

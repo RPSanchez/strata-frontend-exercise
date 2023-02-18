@@ -2,6 +2,7 @@ import { FC, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import styles from "styles/Leaderboard.module.css";
 import React from "react";
+import Image from "next/image";
 
 interface LeaderboardEntry {
   username: string;
@@ -15,7 +16,7 @@ const LeaderboardItem: FC<{
   index: number;
   toggleLikedUser: (username: string) => void;
   style?: { boxShadow: string } | {};
-}> = React.memo(({ entry, index, toggleLikedUser, style = {} }) => {
+}> = React.memo(function LeaderboardItem({ entry, index, toggleLikedUser, style = {} }) {
   const handleToggleLikedUser = useCallback(() => {
     toggleLikedUser(entry.username);
   }, [toggleLikedUser, entry.username]);
@@ -32,10 +33,12 @@ const LeaderboardItem: FC<{
       <div className={styles.user}>
         <Link legacyBehavior href={`/profile/${encodeURIComponent(entry.username)}`}>
           <a className={styles.profileWrapper}>
-            <img
+          <Image
               src={entry.profileImage}
               alt={`Profile picture of ${entry.username}`}
               className={styles.profileImage}
+              width={50}
+              height={50}
             />
           </a>
         </Link>
@@ -57,6 +60,8 @@ const LeaderboardItem: FC<{
     </li>
   );
 });
+
+LeaderboardItem.displayName = 'LeaderboardItem';
 
 const Leaderboard: FC = () => {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);

@@ -21,14 +21,7 @@ const UserProfile: FC = () => {
   const router = useRouter();
   const { username } = router.query;
 
-  const [profileData, setProfileData] = useState<ProfileData>({
-    username: "",
-    age: 0,
-    twitter: "",
-    email: "",
-    birthday: "",
-    bio: "",
-  });
+  const [profileData, setProfileData] = useState<ProfileData>();
   
   const handleLike = () => {
     if (!profileData) return; // Add check for profileData
@@ -71,7 +64,7 @@ const UserProfile: FC = () => {
   }, [username]);
 
   if (!profileData) {
-    return <div>Loading...</div>;
+    return <div>Loading... <div className="spinner"></div></div>;
   }
 
   const props: Props = {
@@ -136,7 +129,7 @@ const Profile: FC<Props & { imagePath: string, handleBack: () => void, handleLik
         </div>
         <div className={`text-3xl font-bold mt-4 ${styles.username}`}>{username}</div>
         <div className={`text-gray-600 mt-2 ${styles.age}`}>{age}</div>
-        <div className={`text-gray-600 mt-2 ${styles.twitter}`} onClick={handleTwitterClick}>Twitter: {twitter}</div>
+        <div className={`text-gray-600 mt-2 ${styles.twitter}`} onClick={handleTwitterClick}>{twitter}</div>
         <div className={`text-gray-600 mt-2 ${styles.email}`} onClick={() => window.location.href = `mailto:${email}`} >
           {email}
         </div>
